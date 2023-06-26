@@ -1,24 +1,26 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC ## Install the Faker Library
-
-# COMMAND ----------
-
-# MAGIC %pip install faker
+# MAGIC # Delete by Date
+# MAGIC
+# MAGIC This is likely the simplest method to implement record retention by date.
+# MAGIC
+# MAGIC On the face of it, this is a good approach, however it is difficult/Impossible when combined with Data Vault or Slowly Changing dimensions and we'd need special treatments for continuity at boundary rows.
+# MAGIC
+# MAGIC Further, the Deletion/Vacuum would require us to halt Streaming updates. This approach is further complicated as “source systems” still have deleted data, such as a "delete flag". We'd need to ensure that incoming data is also excluded.
+# MAGIC
+# MAGIC A final complication here is that deletion must be paired with a VACUUM operation (to delete table history) otherwise users can easily bypass retention periods. 
+# MAGIC
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC Filter By Retention with Views
+# MAGIC ## Install the Faker Library
+# MAGIC
+# MAGIC We install the faker library required by our lab_setup Python module.
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC CREATE CATALOG IF NOT EXISTS demo;
-# MAGIC CREATE SCHEMA IF NOT EXISTS demo.retention_examples;
-# MAGIC
-# MAGIC USE demo.retention_examples;
-# MAGIC
+# MAGIC %pip install faker
 
 # COMMAND ----------
 
