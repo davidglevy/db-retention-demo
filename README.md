@@ -3,6 +3,11 @@ This repository proposes multiple options for organisations to delete old data i
 
 This was created in response to customer questions asking for the "best way to delete old data" in Databricks.
 
+## TODOs
+1. Add a table with Slowly Changing Dimensions (person_info_history) and validate each approach against it.
+2. Build the streaming option which will utilise delete flags on incoming data.
+3. Switch to logger solution: https://medium.com/@dlevy_18530/better-logging-in-databricks-e7f6e14eb24d
+
 ## Hard Requirement
 The key requirement we're looking to implement is to deny most users being able to be used in queries after a specified retention of data.
 

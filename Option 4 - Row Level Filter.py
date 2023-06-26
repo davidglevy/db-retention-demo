@@ -1,6 +1,12 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC # Row Level Filter
+# MAGIC
+# MAGIC With this option, we create a re-usable function that will filter rows from a query by a given column.
+# MAGIC
+# MAGIC This option is a soft delete - the data is still present but from a users perspective it is not present.
+# MAGIC
+# MAGIC This option can easily be extended to work with a Slowly Changing Dimension Type 2 table or Data Vault Table by using start_date and end_date fields in the filter function.
 
 # COMMAND ----------
 
@@ -10,15 +16,6 @@
 # COMMAND ----------
 
 # MAGIC %pip install faker
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC CREATE CATALOG IF NOT EXISTS demo;
-# MAGIC CREATE SCHEMA IF NOT EXISTS demo.retention_examples;
-# MAGIC
-# MAGIC USE demo.retention_examples;
-# MAGIC
 
 # COMMAND ----------
 
@@ -65,12 +62,7 @@ reset_lab(spark)
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC ALTER TABLE person_info DROP ROW FILTER;
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC
+# MAGIC --ALTER TABLE person_info DROP ROW FILTER;
 
 # COMMAND ----------
 

@@ -1,24 +1,19 @@
 # Databricks notebook source
 # MAGIC %md
+# MAGIC # Create a View
+# MAGIC This option looks at whether we can create a view for user consumption, which also necessitates us hiding
+# MAGIC the data in the source table.
+# MAGIC
+# MAGIC This option is realtively easy however if we do this, users will be denied access to time travel and the policy is only effective if users do not receive access to the underlying table. We also need to ensure users have BROWSE permission on the underlying table to see lineage/metadata which may help them understand validity.
+
+# COMMAND ----------
+
+# MAGIC %md
 # MAGIC ## Install the Faker Library
 
 # COMMAND ----------
 
 # MAGIC %pip install faker
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Filter By Retention with Views
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC CREATE CATALOG IF NOT EXISTS demo;
-# MAGIC CREATE SCHEMA IF NOT EXISTS demo.retention_examples;
-# MAGIC
-# MAGIC USE demo.retention_examples;
-# MAGIC
 
 # COMMAND ----------
 
