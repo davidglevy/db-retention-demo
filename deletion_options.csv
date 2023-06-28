@@ -1,0 +1,7 @@
+Option 1 - Delete Data,Option 2 - Delete on Merge,Option 3 - Create Views,Option 4 - Row Level Filters,
+Hard or Soft Delete,Hard,Hard,Soft,Soft
+Complexity?,Easy,Average,Average,Easy
+Limitations,Time Travel,Time Travel,Time Travel,None
+Streaming Compatible?,No,Yes,Yes,Yes
+Upstream Dependent,No,Yes,No,No
+SCD2 / Data Vault Compatible?,No,No,Yes,Yes

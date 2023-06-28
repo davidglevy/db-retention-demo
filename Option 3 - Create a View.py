@@ -48,9 +48,9 @@ reset_lab(spark)
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Run the Delete by Date
+# MAGIC ## Create our View
 # MAGIC
-# MAGIC Here we run the most basic example where we delete by date.
+# MAGIC Now we create a view with our retention policy.
 
 # COMMAND ----------
 

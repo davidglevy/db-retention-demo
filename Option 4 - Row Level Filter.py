@@ -72,12 +72,6 @@ reset_lab(spark)
 # MAGIC CREATE OR REPLACE FUNCTION retention_check(id BIGINT, record_dt DATE)
 # MAGIC RETURNS BOOLEAN
 # MAGIC   RETURN (record_dt >= (curdate() - INTERVAL '7' YEAR))
-# MAGIC
-# MAGIC
-# MAGIC
-# MAGIC -- CREATE OR REPLACE FUNCTION test_check(id BIGINT, record_dt BIGINT)
-# MAGIC -- RETURNS BOOLEAN
-# MAGIC --  RETURN FALSE;
 
 # COMMAND ----------
 
